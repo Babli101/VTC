@@ -77,7 +77,7 @@ export class Home implements AfterViewInit {
       bg: 'banner3.png',
       left: 'banner2.png',
       right: 'banner3.png',
-      title: 'Engineered for Global Shipping'
+      title: 'Complete Moisture Protection Solutions'
     }
   ];
 
