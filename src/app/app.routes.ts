@@ -16,4 +16,9 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./services/services').then(m => m.Services),
   },
+  {
+    path: 'contact',
+    loadComponent: () =>
+      import('./contact/contact').then(m => m.Contact),
+  },
 ];

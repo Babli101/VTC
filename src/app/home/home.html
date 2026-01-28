@@ -1,94 +1,72 @@
 <!-- hero section start -->
-<header class="relative w-full h-[400px] sm:h-[520px] md:h-[520px] lg:h-[552px] overflow-hidden">
+<div class="header pt-19 relative z-10">
+    <header class="relative w-full h-[400px] sm:h-[520px] md:h-[520px] lg:h-[560px] overflow-hidden">
 
-  <!-- Background slides -->
-  <div
-    class="absolute inset-0 transition-opacity duration-700 pointer-events-none"
-    *ngFor="let slide of heroSlides; let i = index"
-    [class.opacity-100]="i === heroIndex"
-    [class.opacity-0]="i !== heroIndex"
-  >
-    <img
-      [src]="slide.bg"
-      class="w-full h-full object-cover scale-110 blur-2xl"
-      alt=""
-    />
-  </div>
+        <!-- Background slides -->
+        <div class="absolute inset-0 transition-opacity duration-700 pointer-events-none"
+            *ngFor="let slide of heroSlides; let i = index" [class.opacity-100]="i === heroIndex"
+            [class.opacity-0]="i !== heroIndex">
+            <img [src]="slide.bg" class="w-full h-full object-cover scale-110 blur-2xl" alt="" />
+        </div>
 
-  <!-- Foreground images -->
-  <div class="relative z-10 flex items-center justify-center h-full px-4">
-    <div
-      class="relative
+        <!-- Foreground images -->
+        <div class="relative z-10 flex items-center justify-center h-full px-4">
+            <div class="relative
              w-full max-w-[1200px]
-             h-[220px] sm:h-[260px] md:h-[320px] lg:h-[370px]"
-    >
+             h-[220px] sm:h-[260px] md:h-[320px] lg:h-[370px]">
 
-      <!-- Left image -->
-      <img
-        [src]="heroSlides[heroIndex].left"
-        class="absolute left-0 sm:left-4 top-0
+                <!-- Left image -->
+                <img [src]="heroSlides[heroIndex].left" class="absolute left-0 sm:left-4 top-0
                w-[60%] sm:w-[55%]
                h-full object-cover
                clip-left transition-all duration-700
-               shadow-2xl"
-        alt=""
-      />
+               shadow-2xl" alt="" />
 
-      <!-- Right image -->
-      <img
-        [src]="heroSlides[heroIndex].right"
-        class="absolute right-0 sm:right-4
+                <!-- Right image -->
+                <img [src]="heroSlides[heroIndex].right" class="absolute right-0 sm:right-4
                top-6 sm:top-8
                w-[60%] sm:w-[55%]
                h-full object-cover
                clip-right transition-all duration-700
-               shadow-2xl"
-        alt=""
-      />
-    </div>
-  </div>
+               shadow-2xl" alt="" />
+            </div>
+        </div>
 
-  <!-- Title -->
-  <div class="absolute top-6 sm:top-10 w-full text-center z-20 px-4">
-    <h1 class="text-white text-xl sm:text-2xl md:text-4xl font-semibold tracking-wide">
-      {{ heroSlides[heroIndex].title }}
-    </h1>
-  </div>
+        <!-- Title -->
+        <div class="absolute top-6 sm:top-10 w-full text-center z-20 px-4">
+            <h1 class="text-white text-xl sm:text-2xl md:text-4xl font-semibold tracking-wide">
+                {{ heroSlides[heroIndex].title }}
+            </h1>
+        </div>
 
-  <!-- Prev / Next buttons -->
-  <button
-    (click)="prevHero()"
-    class="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2
+        <!-- Prev / Next buttons -->
+        <button (click)="prevHero()" class="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2
            bg-black/50 hover:bg-black/70 text-white
            w-9 h-9 sm:w-10 sm:h-10
            rounded-full flex items-center justify-center
            z-30">
-    ‹
-  </button>
+            ‹
+        </button>
 
-  <button
-    (click)="nextHero()"
-    class="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2
+        <button (click)="nextHero()" class="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2
            bg-black/50 hover:bg-black/70 text-white
            w-9 h-9 sm:w-10 sm:h-10
            rounded-full flex items-center justify-center
            z-30">
-    ›
-  </button>
+            ›
+        </button>
+        <!-- Pagination dots -->
+        <div class="absolute bottom-6 sm:bottom-10 w-full flex justify-center gap-3 z-20">
+            <span *ngFor="let slide of heroSlides; index as i" (click)="goToHero(i)" class="w-2.5 h-2.5 sm:w-3 sm:h-3
+             rounded-full cursor-pointer transition" [class.bg-white]="i === heroIndex"
+                [class.bg-white/40]="i !== heroIndex">
+            </span>
+        </div>
 
-  <!-- Pagination dots -->
-  <div class="absolute bottom-6 sm:bottom-10 w-full flex justify-center gap-3 z-20">
-    <span
-      *ngFor="let slide of heroSlides; index as i"
-      (click)="goToHero(i)"
-      class="w-2.5 h-2.5 sm:w-3 sm:h-3
-             rounded-full cursor-pointer transition"
-      [class.bg-white]="i === heroIndex"
-      [class.bg-white/40]="i !== heroIndex">
-    </span>
-  </div>
+    </header>
+</div>
 
-</header>
+
 <!-- hero section end -->
 
 <!-- about section start -->
