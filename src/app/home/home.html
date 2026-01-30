@@ -198,83 +198,67 @@
 <!-- protection, trusted by leading brands end  -->
 
 <!-- A complete system of protection  start-->
-<section class="py-20 bg-[#f5f8ff]">
-  <div class="max-w-7xl mx-auto px-4">
+
+<section class="py-10">
+  <div class="max-w-5xl mx-auto px-4">
 
     <!-- Header -->
-    <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-16">
-      <h2 class="text-4xl font-bold text-blue-900 max-w-xl">
-        Moisture Protection <br>
-        <span class="text-blue-600">Solutions</span>
+    <div class="mb-16 text-center">
+      <h2 class="text-4xl font-bold text-blue-900">
+        Moisture Protection
+        <span class="text-blue-600"> Solutions</span>
       </h2>
-      <p class="text-gray-700 max-w-xl mt-4 md:mt-0">
-        High-performance desiccant solutions engineered to protect products and cargo
-        from moisture damage during storage and transit.
-      </p>
-    </div>
 
-    <!-- Solutions -->
-    <div class="space-y-14">
+      <!-- Button Switch -->
+      <div class="flex justify-center mt-10">
+        <div class="flex gap-3">
 
-      <!-- Solution 01 -->
-      <div class="grid md:grid-cols-2 gap-10 items-center">
-        <div>
-          <span class="text-7xl font-bold text-blue-100">01</span>
-          <h3 class="text-2xl font-semibold text-blue-900 mb-4">
+          <button
+            (click)="activeSolution = 'box'"
+            [ngClass]="activeSolution === 'box'
+              ? 'bg-black text-white'
+              : 'bg-white text-black border border-gray-300'"
+            class="px-8 py-3 text-sm font-semibold rounded-full transition"
+          >
             In-Box Desiccants
-          </h3>
-          <p class="text-gray-700 mb-6">
-            Perfect for poly bags, cartons, boxes, and crates. These desiccants work
-            directly inside packaging to absorb excess moisture and preserve product quality.
-          </p>
-          <a href="#" class="inline-flex items-center text-blue-900 font-semibold hover:gap-2 transition-all">
-            Learn More
-            <span class="material-symbols-outlined">arrow_right_alt</span>
-          </a>
-        </div>
+          </button>
 
-        <div class="backdrop-blur-xl bg-white/60 border border-white/40 rounded-3xl p-10 shadow-lg">
-          <span class="material-symbols-outlined text-blue-900 text-6xl mb-4 block">
-            inventory_2
-          </span>
-          <p class="text-gray-800">
-            Ensures goods reach customers dry, safe, and damage-free even in
-            high-humidity environments.
-          </p>
-        </div>
-      </div>
-
-      <!-- Solution 02 -->
-      <div class="grid md:grid-cols-2 gap-10 items-center md:flex-row-reverse">
-        <div class="md:order-2">
-          <span class="text-7xl font-bold text-blue-100">02</span>
-          <h3 class="text-2xl font-semibold text-blue-900 mb-4">
+          <button
+            (click)="activeSolution = 'container'"
+            [ngClass]="activeSolution === 'container'
+              ? 'bg-black text-white'
+              : 'bg-white text-black border border-gray-300'"
+            class="px-8 py-3 text-sm font-semibold rounded-full transition"
+          >
             Container Desiccants
-          </h3>
-          <p class="text-gray-700 mb-6">
-            Designed to eliminate container rain and cargo sweat during ocean transport.
-            Suitable for bulk goods, agriculture, garments, and industrial shipments.
-          </p>
-          <a href="#" class="inline-flex items-center text-blue-900 font-semibold hover:gap-2 transition-all">
-            Learn More
-            <span class="material-symbols-outlined">arrow_right_alt</span>
-          </a>
-        </div>
+          </button>
 
-        <div class="md:order-1 backdrop-blur-xl bg-white/60 border border-white/40 rounded-3xl p-10 shadow-lg">
-          <span class="material-symbols-outlined text-blue-900 text-6xl mb-4 block">
-            local_shipping
-          </span>
-          <p class="text-gray-800">
-            Maintains optimal humidity inside shipping containers, protecting cargo
-            throughout long international journeys.
-          </p>
         </div>
       </div>
 
+      <!-- Description -->
+      <div class="mt-6 max-w-2xl mx-auto text-gray-700">
+
+        <!-- In-Box -->
+        <p *ngIf="activeSolution === 'box'">
+          Built to absorb excess moisture inside poly bags, cartons, boxes, and small
+          packages. In-Box Desiccants help maintain safe humidity levels and protect
+          products from mold, mildew, corrosion, and caking during storage and transit.
+        </p>
+
+        <!-- Container -->
+        <p *ngIf="activeSolution === 'container'">
+          Designed specifically for ocean containers, Container Desiccants prevent
+          container rain and cargo sweat. They help protect bulk goods, garments,
+          agricultural produce, and industrial cargo from moisture-related damage.
+        </p>
+
+      </div>
     </div>
   </div>
 </section>
+
+
 
 <div class="py-5">
     <img src="banner3.png" alt="" class="w-full h-100 object-cover">
@@ -393,12 +377,66 @@
             [class.bg-blue-600]="i === currentIndex" [class.bg-gray-300]="i !== currentIndex">
         </span>
     </div>
-
 </div>
-
 <!-- mobile view end -->
-<!-- A complete system of protection  start-->
+ <!-- A complete system of protection  end-->
+  <!-- Certified start -->
+ <!-- <section class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <h2 class="text-3xl md:text-4xl font-semibold text-gray-900 mb-3">
+      Why this is our best ever Routine?
+    </h2>
+    <p class="text-gray-600 max-w-2xl mx-auto mb-14">
+      You can directly select what you are looking for and we will hook you with the right product line.
+    </p>
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-10 items-center">
+      <div class="flex flex-col items-center gap-3">
+        <span class="material-symbols-outlined text-5xl text-black">
+          eco
+        </span>
+        <p class="text-sm font-medium text-gray-800">
+          Vegan Certified
+        </p>
+      </div>
+      <div class="flex flex-col items-center gap-3">
+        <span class="text-4xl font-serif italic text-black">
+          fssai
+        </span>
+        <p class="text-sm font-medium text-gray-800">
+          FSSAI
+        </p>
+      </div>
+      <div class="flex flex-col items-center gap-3">
+        <span class="material-symbols-outlined text-5xl text-black">
+          medication
+        </span>
+        <p class="text-sm font-medium text-gray-800">
+          Food Supplement
+        </p>
+      </div>
+      <div class="flex flex-col items-center gap-3">
+        <span class="material-symbols-outlined text-5xl text-black">
+          grain
+        </span>
+        <p class="text-sm font-medium text-gray-800">
+          Gluten-Free
+        </p>
+      </div>
+      <div class="flex flex-col items-center gap-3">
+        <span class="material-symbols-outlined text-5xl text-black">
+          verified
+        </span>
+        <p class="text-sm font-medium text-gray-800">
+          Non GMO
+        </p>
+      </div>
 
+    </div>
+  </div>
+</section> -->
+<!-- certified end   -->
+
+<!-- why vtc faqs start   -->
 <section class="max-w-4xl mx-auto my-10 px-5 md:px-0">
     <h2 class="text-3xl text-blue-900 mb-3">
         Why VTC?
@@ -431,3 +469,4 @@
 
     </div>
 </section>
+<!-- why vtc faqs end   -->
