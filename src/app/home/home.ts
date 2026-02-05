@@ -6,10 +6,13 @@ import {
   ViewChildren,
   Inject,
   PLATFORM_ID,
-  CUSTOM_ELEMENTS_SCHEMA
+  CUSTOM_ELEMENTS_SCHEMA,
+  OnInit
 } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { RouterLink } from "@angular/router";
+import { OnDestroy } from '@angular/core';
+
 
 @Component({
   selector: 'app-home',
@@ -19,9 +22,9 @@ import { RouterLink } from "@angular/router";
   styleUrl: './home.css',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class Home implements AfterViewInit {
+export class Home implements AfterViewInit, OnInit, OnDestroy {
 
-  /* ---------------- COUNTER ---------------- */
+  /* ================= COUNTER ================= */
   @ViewChildren('counter') counters!: QueryList<ElementRef<HTMLElement>>;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
@@ -52,54 +55,33 @@ export class Home implements AfterViewInit {
       el.innerText = Math.floor(progress * target).toLocaleString();
       if (progress < 1) requestAnimationFrame(update);
     };
-
     requestAnimationFrame(update);
   }
-  /* ================= HERO SLIDER ================= */
 
+  /* ================= HERO SLIDER ================= */
   heroIndex = 0;
 
   heroSlides = [
-    {
-      bg: '/banner1.png',
-      left: 'banner2.png',
-      right: 'banner3.png',
-      title: 'Advanced Moisture Protection'
-    },
-    {
-      bg: 'banner2.png',
-      left: 'banner3.png',
-      right: 'banner1.png',
-      title: 'Engineered for Global Shipping'
-    },
-    {
-      bg: 'banner3.png',
-      left: 'banner2.png',
-      right: 'banner3.png',
-      title: 'Complete Moisture Protection Solutions'
-    }
+    { bg: '/banner1.png', left: 'banner2.png', right: 'banner3.png', title: 'Advanced Moisture Protection' },
+    { bg: 'banner2.png', left: 'banner3.png', right: 'banner1.png', title: 'Engineered for Global Shipping' },
+    { bg: 'banner3.png', left: 'banner2.png', right: 'banner3.png', title: 'Complete Moisture Protection Solutions' }
   ];
 
   prevHero() {
-    console.log('Prev hero clicked');
     this.heroIndex =
       this.heroIndex === 0 ? this.heroSlides.length - 1 : this.heroIndex - 1;
   }
 
-
   nextHero() {
-    this.heroIndex =
-      (this.heroIndex + 1) % this.heroSlides.length;
+    this.heroIndex = (this.heroIndex + 1) % this.heroSlides.length;
   }
 
   goToHero(index: number) {
     this.heroIndex = index;
   }
 
-
-  /* ================= MOBILE CAROUSEL ================= */
-
-  currentIndex = 0;
+  /* ================= MOBILE PROCESS SLIDER ================= */
+  mobileIndex = 0;
 
   slides = [
     { image: '/process1.png', caption: 'Production', description: 'Moisture protection starts at source.' },
@@ -108,64 +90,97 @@ export class Home implements AfterViewInit {
     { image: '/process4.png', caption: 'Retail', description: 'Dry & damage-free delivery.' }
   ];
 
-  prevSlide() {
-    this.currentIndex =
-      this.currentIndex === 0 ? this.slides.length - 1 : this.currentIndex - 1;
+  prevMobile() {
+    this.mobileIndex =
+      this.mobileIndex === 0 ? this.slides.length - 1 : this.mobileIndex - 1;
   }
 
-  nextSlide() {
-    this.currentIndex =
-      (this.currentIndex + 1) % this.slides.length;
+  nextMobile() {
+    this.mobileIndex = (this.mobileIndex + 1) % this.slides.length;
   }
 
-  goToSlide(index: number) {
-    this.currentIndex = index;
+  goToMobile(index: number) {
+    this.mobileIndex = index;
   }
 
+  /* ================= SOLUTION TOGGLE ================= */
+  activeSolution: 'box' | 'container' = 'box';
 
-  /* ================= SAFETY ALIAS (IMPORTANT) ================= */
-  /* Ye error ko permanently khatam karega,
-     chahe HTML me kahin bhi purana code reh jaye */
 
-  prev() {
-    this.prevSlide();
-  }
-
-  next() {
-    this.nextSlide();
-  }
-
-  goTo(index: number) {
-    this.goToSlide(index);
-  }
-  /* ---------------- FAQ ---------------- */
-  activeIndex: number | null = null;
-
-  faqs = [
+  /* ================= TESTIMONIALS ================= */
+  testimonials = [
     {
       question: 'Advanced Moisture Control',
-      answer: 'Actively removes moisture to protect goods from mold and corrosion.'
+      answer: 'Provides active moisture removal to safeguard goods against mold, corrosion, and damage throughout the supply chain.'
     },
     {
       question: 'High-Performance Desiccants',
-      answer: 'Engineered to absorb multiple times their weight in moisture.'
+      answer: 'Manufactured using advanced technology to achieve high moisture absorption capacity while maintaining safety and performance standards.'
     },
     {
       question: 'Comprehensive Protection Strategy',
-      answer: 'Risk analysis, optimized placement, and ongoing support.'
+      answer: 'We provide detailed risk analysis, strategically optimized placement solutions, and ongoing technical support to ensure effective moisture protection.'
     },
     {
       question: 'Trusted by Global Leaders',
-      answer: 'Used worldwide across industries and supply chains.'
+      answer: 'Adopted across industries worldwide, our solutions support dependable performance throughout complex global supply chains.'
     },
     {
       question: 'Quality & Compliance',
-      answer: 'Meets international safety and performance standards.'
+      answer: 'Meets internationally recognized safety, quality, and performance benchmarks to ensure reliable protection across global supply chains.'
     }
   ];
 
-  toggleFaq(index: number) {
-    this.activeIndex = this.activeIndex === index ? null : index;
+  testimonialIndex = 0;
+  visibleCards = 3;
+  cardWidth = 320;
+
+  ngOnInit() {
+    if (!isPlatformBrowser(this.platformId)) return;
+
+    this.updateVisibleCards();
+    window.addEventListener('resize', this.onResize);
   }
-  activeSolution: 'box' | 'container' = 'box';
+
+  onResize = () => {
+    this.updateVisibleCards();
+  };
+
+ updateVisibleCards() {
+  if (!isPlatformBrowser(this.platformId)) return;
+
+  const w = window.innerWidth;
+
+  if (w < 640) {
+    // Mobile
+    this.visibleCards = 1;
+    this.cardWidth = 320;
+  } else if (w < 1024) {
+    // Tablet
+    this.visibleCards = 2;
+    this.cardWidth = 320;
+  } else {
+    // Desktop
+    this.visibleCards = 3;
+    this.cardWidth = 360;
+  }
+}
+
+
+  nextTestimonial() {
+    if (this.testimonialIndex < this.testimonials.length - 1) {
+      this.testimonialIndex++;
+    }
+  }
+
+  prevTestimonial() {
+    if (this.testimonialIndex > 0) {
+      this.testimonialIndex--;
+    }
+  }
+
+  ngOnDestroy(): void {
+    if (!isPlatformBrowser(this.platformId)) return;
+    window.removeEventListener('resize', this.onResize);
+  }
 }
