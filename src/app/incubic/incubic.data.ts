@@ -31,6 +31,18 @@ export const INCUBIC_CATEGORIES = [
     slug: 'oxygen-absorbers',
     name: 'Oxygen Absorbers',
   },
+  {
+    slug: 'dp',
+    name: 'DP',
+  },
+  {
+    slug: 'ds',
+    name: 'DS',
+  },
+  {
+    slug: 'sq-tp-dp',
+    name: 'SQ/TP/DP',
+  },
 ];
 
 
@@ -193,83 +205,83 @@ export const INCUBIC_DATA = [
   },
   /* ---------------- SILICA GEL GRANULES DESICCANTS ---------------- */
   {
-  slug: 'silica-gel-granules',
-  name: 'Silica Gel Granules Desiccants',
+    slug: 'silica-gel-granules',
+    name: 'Silica Gel Granules Desiccants',
 
-  /* CATEGORY IMAGES */
-  images: [
-    '/banner1.png',
-    '/banner2.png',
-    '/banner3.png'
-  ],
+    /* CATEGORY IMAGES */
+    images: [
+      '/banner1.png',
+      '/banner2.png',
+      '/banner3.png'
+    ],
 
-  description1:
-    'VTC® Silica Gel Granules Desiccants are produced from high-purity amorphous silica and engineered to deliver efficient moisture control across a wide range of packaging and storage environments.',
+    description1:
+      'VTC® Silica Gel Granules Desiccants are produced from high-purity amorphous silica and engineered to deliver efficient moisture control across a wide range of packaging and storage environments.',
 
-  description2:
-    'These silica gel granules offer excellent thermal stability and high adsorption capacity, making them ideal for demanding applications in electronics, pharmaceuticals, food packaging, and industrial storage.',
+    description2:
+      'These silica gel granules offer excellent thermal stability and high adsorption capacity, making them ideal for demanding applications in electronics, pharmaceuticals, food packaging, and industrial storage.',
 
-  /* CATEGORY FEATURES */
-  features: [
-    'High moisture adsorption capacity',
-    'Excellent thermal and chemical stability',
-    'Free-flowing granular structure',
-    'Non-toxic and chemically inert',
-    'Consistent performance in sealed packaging'
-  ],
+    /* CATEGORY FEATURES */
+    features: [
+      'High moisture adsorption capacity',
+      'Excellent thermal and chemical stability',
+      'Free-flowing granular structure',
+      'Non-toxic and chemically inert',
+      'Consistent performance in sealed packaging'
+    ],
 
-  /* CATEGORY APPLICATIONS */
-  applications: [
-    'Electronics and electrical components',
-    'Pharmaceutical packaging',
-    'Food packaging',
-    'Industrial storage',
-    'Machinery and spare parts'
-  ],
+    /* CATEGORY APPLICATIONS */
+    applications: [
+      'Electronics and electrical components',
+      'Pharmaceutical packaging',
+      'Food packaging',
+      'Industrial storage',
+      'Machinery and spare parts'
+    ],
 
-  products: [
-    {
-      slug: '1g-silica-granules',
-      name: '1g Silica Gel Granules',
-      gram: '1g SGG',
-      images: [
-        '/banner1.png',
-        '/banner2.png',
-        '/banner3.png'
-      ]
-    },
-    {
-      slug: '2g-silica-granules',
-      name: '2g Silica Gel Granules',
-      gram: '2g SGG',
-      images: [
-        '/banner1.png',
-        '/banner2.png',
-        '/banner3.png'
-      ]
-    },
-    {
-      slug: '5g-silica-granules',
-      name: '5g Silica Gel Granules',
-      gram: '5g SGG',
-      images: [
-        '/banner1.png',
-        '/banner2.png',
-        '/banner3.png'
-      ]
-    },
-    {
-      slug: '10g-silica-granules',
-      name: '10g Silica Gel Granules',
-      gram: '10g SGG',
-      images: [
-        '/banner1.png',
-        '/banner2.png',
-        '/banner3.png'
-      ]
-    }
-  ]
-},
+    products: [
+      {
+        slug: '1g-silica-granules',
+        name: '1g Silica Gel Granules',
+        gram: '1g SGG',
+        images: [
+          '/banner1.png',
+          '/banner2.png',
+          '/banner3.png'
+        ]
+      },
+      {
+        slug: '2g-silica-granules',
+        name: '2g Silica Gel Granules',
+        gram: '2g SGG',
+        images: [
+          '/banner1.png',
+          '/banner2.png',
+          '/banner3.png'
+        ]
+      },
+      {
+        slug: '5g-silica-granules',
+        name: '5g Silica Gel Granules',
+        gram: '5g SGG',
+        images: [
+          '/banner1.png',
+          '/banner2.png',
+          '/banner3.png'
+        ]
+      },
+      {
+        slug: '10g-silica-granules',
+        name: '10g Silica Gel Granules',
+        gram: '10g SGG',
+        images: [
+          '/banner1.png',
+          '/banner2.png',
+          '/banner3.png'
+        ]
+      }
+    ]
+  },
   /* ---------------- MOLECULAR SIEVE DESICCANTS ---------------- */
   {
     slug: 'molecular-sieve-desiccants',
@@ -584,6 +596,241 @@ export const INCUBIC_DATA = [
         ]
       }
     ]
-  }
+  },
+  //======================= this is data of DS, DP, SQ/TP/DP ================================  
+  // ===================== DS ==============
+  {
+    slug: 'ds',
+    name: 'DS',
+
+    /* CATEGORY IMAGES */
+    images: [
+      '/banner1.png',
+      '/banner2.png',
+      '/banner3.png'
+    ],
+
+    description1:
+      'VTC desiccants are manufactured using high-purity calcium chloride combined with a specially developed natural organic gelling agent. Calcium chloride is a highly hygroscopic material capable of attracting and binding large amounts of moisture from the surrounding air. Under controlled conditions of 95% relative humidity at 35°C over a period of 30 days, VTC desiccants demonstrate an exceptional moisture absorption capacity of over 300% of their net dry weight, making them highly effective in extreme humidity environments such as sea freight and long-distance transportation.',
+
+    description2:
+      'As moisture is absorbed, the calcium chloride reacts with the organic gelling agent and converts the absorbed moisture into a stable, leak-free gel through an irreversible reaction. This process securely locks in the moisture and completely eliminates the risk of liquid leakage, ensuring safe, reliable, and long-lasting moisture protection for cargo, packaging, and moisture-sensitive products throughout storage and transit.',
+
+    /* OPTIONAL – CATEGORY LEVEL DETAILS (Superdryers style) */
+    features: [
+      'High moisture absorption capacity',
+      'Designed for standard container applications',
+      'Effective prevention of container rain and condensation',
+      'Stable gel formation with leak-proof performance',
+      'Durable outer packaging for long transit cycles',
+      'Easy installation using hooks or hanging systems'
+    ],
+    applications: [
+      'Export and import cargo containers',
+      'Electronics and electrical goods',
+      'Machinery and spare parts',
+      'Textiles, garments, and leather products',
+      'Metal components and automotive parts',
+      'General industrial cargo'
+    ],
+    products: [
+      {
+        slug: 'ds-250g',
+        name: 'DS 250g',
+        gram: 'DS 250g',
+        images: [
+          '/banner1.png',
+          '/banner2.png',
+          '/banner3.png'
+        ]
+      },
+      {
+        slug: 'ds-250g-sticker',
+        name: 'DS 250g sticker',
+        gram: 'DS 250g Sticker',
+        images: [
+          '/banner1.png',
+          '/banner2.png',
+          '/banner3.png'
+        ]
+      },
+      {
+        slug: 'ds-500g',
+        name: 'DS 500g',
+        gram: 'DS 500g',
+        images: [
+          '/banner1.png',
+          '/banner2.png',
+          '/banner3.png'
+        ]
+      },
+    ]
+  },
+  // ===================== DP ==============
+  {
+    slug: 'dp',
+    name: 'DP',
+
+    /* CATEGORY IMAGES */
+    images: [
+      '/banner1.png',
+      '/banner2.png',
+      '/banner3.png'
+    ],
+
+    description1:
+      'DP Series container desiccants are heavy-duty moisture control solutions designed for extreme humidity conditions and long-duration sea shipments. Engineered using high-absorption calcium chloride–based technology, DP desiccants provide superior protection against container rain, cargo sweat, and condensation in high-risk logistics environments.',
+
+    description2:
+      'These desiccants are specifically developed for heavy cargo, long transit routes, and high-moisture climates, where standard desiccants may be insufficient. The absorbed moisture is converted into a stable gel through a leak-proof system, ensuring safe and reliable performance throughout the shipping cycle.',
+
+    /* OPTIONAL – CATEGORY LEVEL DETAILS (Superdryers style) */
+    features: [
+      'Ultra-high moisture absorption capacity',
+      'Designed for extreme humidity and long sea routes',
+      'Prevents container rain and cargo sweat effectively',
+      'Heavy-duty, leak-proof multi-layer packaging',
+      'Stable gel formation with zero leakage risk',
+      'Suitable for high-weight and high-value cargo'
+    ],
+    applications: [
+      'Ocean freight containers',
+      'Steel coils and metal products',
+      'Machinery and heavy equipment',
+      'Automotive components',
+      'Export cargo on long transit routes',
+      'High-humidity and tropical shipping lanes'
+    ],
+    products: [
+      {
+        slug: 'dp-1000g',
+        name: 'DP 1000g',
+        gram: 'DP 1000g',
+        images: [
+          '/banner1.png',
+          '/banner2.png',
+          '/banner3.png'
+        ]
+      }
+    ]
+  },
+  // ===================== DP ==============
+  {
+    slug: 'dp',
+    name: 'DP',
+
+    /* CATEGORY IMAGES */
+    images: [
+      '/banner1.png',
+      '/banner2.png',
+      '/banner3.png'
+    ],
+
+    description1:
+      'DP Series container desiccants are heavy-duty moisture control solutions designed for extreme humidity conditions and long-duration sea shipments. Engineered using high-absorption calcium chloride–based technology, DP desiccants provide superior protection against container rain, cargo sweat, and condensation in high-risk logistics environments.',
+
+    description2:
+      'These desiccants are specifically developed for heavy cargo, long transit routes, and high-moisture climates, where standard desiccants may be insufficient. The absorbed moisture is converted into a stable gel through a leak-proof system, ensuring safe and reliable performance throughout the shipping cycle.',
+
+    /* OPTIONAL – CATEGORY LEVEL DETAILS (Superdryers style) */
+    features: [
+      'Ultra-high moisture absorption capacity',
+      'Designed for extreme humidity and long sea routes',
+      'Prevents container rain and cargo sweat effectively',
+      'Heavy-duty, leak-proof multi-layer packaging',
+      'Stable gel formation with zero leakage risk',
+      'Suitable for high-weight and high-value cargo'
+    ],
+    applications: [
+      'Ocean freight containers',
+      'Steel coils and metal products',
+      'Machinery and heavy equipment',
+      'Automotive components',
+      'Export cargo on long transit routes',
+      'High-humidity and tropical shipping lanes'
+    ],
+    products: [
+      {
+        slug: 'dp-1000g',
+        name: 'DP 1000g',
+        gram: 'DP 1000g',
+        images: [
+          '/banner1.png',
+          '/banner2.png',
+          '/banner3.png'
+        ]
+      }
+    ]
+  },
+  // ===================== DP ==============
+  {
+    slug: 'sq-tp-dp',
+    name: 'SQ/TP/DP',
+
+    /* CATEGORY IMAGES */
+    images: [
+      '/banner1.png',
+      '/banner2.png',
+      '/banner3.png'
+    ],
+
+    description1:
+      'SQ / TP / DB Series container desiccants are specially engineered for applications where space optimization, flexible placement, and targeted moisture control are required inside shipping containers. These desiccants are designed using high-performance calcium chloride–based absorption technology, delivering effective moisture protection even in confined or difficult-to-access areas.',
+
+    description2:
+      'The series includes SQ (Slim Quality), TP (Top Placement), and DB (Double Block / Flat Placement) formats, allowing installation in narrow gaps, overhead container roofs, and flat cargo surfaces. Moisture absorbed during transit is converted into a stable, leak-free gel, ensuring safe and reliable performance throughout long-distance and high-humidity shipments.',
+
+    /* OPTIONAL – CATEGORY LEVEL DETAILS (Superdryers style) */
+    features: [
+      'Space-optimized designs for flexible placement',
+      'High moisture absorption capacity',
+      'Effective in narrow gaps and limited spaces',
+      'Prevents condensation and container rain',
+      'Leak-proof packaging with stable gel formation',
+      'Suitable for long-duration sea and land transport'
+    ],
+    applications: [
+      'Garments and textile shipments',
+      'Furniture and finished goods',
+      'Palletized and boxed cargo',
+      'Containers with limited wall space',
+      'Export cargo requiring targeted moisture control',
+      'High-humidity shipping environments'
+    ],
+    products: [
+      {
+        slug: 'db-1000g',
+        name: 'DB 1000G',
+        gram: 'DB 1000G',
+        images: [
+          '/banner1.png',
+          '/banner2.png',
+          '/banner3.png'
+        ]
+      },
+      {
+        slug: 'db-1000g',
+        name: 'SQ 1000G',
+        gram: 'SQ 1000G',
+        images: [
+          '/banner1.png',
+          '/banner2.png',
+          '/banner3.png'
+        ]
+      },
+      {
+        slug: 'tp-1000g',
+        name: 'TP 1000G',
+        gram: 'TP 1000G',
+        images: [
+          '/banner1.png',
+          '/banner2.png',
+          '/banner3.png'
+        ]
+      },
+    ]
+  },
 ];
+
+
 

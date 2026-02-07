@@ -26,7 +26,7 @@
           </span>
 
           <!-- Dropdown -->
-          <div class="absolute left-0 top-full mt-7 w-[420px] bg-white border shadow-lg
+          <div class="absolute left-0 top-full mt-[30px] w-[420px] bg-white border shadow-lg
                    opacity-0 invisible group-hover:opacity-100 group-hover:visible
                    transition-all duration-200">
             <div class="grid grid-cols-2 p-4 gap-4">
@@ -112,15 +112,19 @@
   </div>
 
   <!-- ================= MOBILE MENU ================= -->
-  <div class="lg:hidden bg-white border-t overflow-hidden transition-all duration-300" [class.max-h-0]="!isOpen"
-    [class.max-h-screen]="isOpen">
+  <div class="lg:hidden bg-white border-t transition-all duration-300
+            overflow-y-auto"
+     [class.max-h-0]="!isOpen"
+     [class.max-h-[calc(100vh-80px)]]="isOpen">
+
     <ul class="px-6 py-4 space-y-4 text-sm font-medium">
 
       <li><a routerLink="/about" (click)="onNavClick()">About Us</a></li>
 
       <!-- Mobile Products -->
       <li>
-        <a routerLink="/services" class="w-full flex justify-between items-center" (click)="isProductsOpen = !isProductsOpen">
+        <a routerLink="/services" class="w-full flex justify-between items-center"
+          (click)="isProductsOpen = !isProductsOpen">
           Products & Services
           <svg class="w-4 h-4 transition-transform" [class.rotate-180]="isProductsOpen" fill="none" viewBox="0 0 24 24"
             stroke="currentColor">
@@ -131,57 +135,65 @@
         <div class="pl-4 mt-3 overflow-hidden transition-all duration-300" [class.max-h-0]="!isProductsOpen"
           [class.max-h-screen]="isProductsOpen">
           <!-- Main links -->
-          <a routerLink="/in-box-desiccants" (click)="onNavClick()" class="block py-2 text-sm font-medium text-gray-800">
+          <a routerLink="/in-box-desiccants" (click)="onNavClick()"
+            class="block py-2 text-sm font-medium text-gray-800">
             In-Box Desiccants
           </a>
           <a routerLink="/calcium-based" (click)="onNavClick()" class="block py-1 hover:text-blue-900">
             Calcium-Based Desiccants
           </a>
 
-          <a routerLink="/in-box-desiccants/incubic" (click)="onNavClick()" class="block py-2 text-sm font-semibold text-blue-900">
+          <a routerLink="/in-box-desiccants/incubic" (click)="onNavClick()"
+            class="block py-2 text-sm font-semibold text-blue-900">
             Incubic
           </a>
 
           <!-- Sub links -->
           <div class="mt-2 pl-3 space-y-2 border-l border-gray-200">
-            <a routerLink="/in-box-desiccants/incubic/clay-desiccants" (click)="onNavClick()" class="block py-1 text-sm text-gray-600">
+            <a routerLink="/in-box-desiccants/incubic/clay-desiccants" (click)="onNavClick()"
+              class="block py-1 text-sm text-gray-600">
               Clay Desiccants
             </a>
 
-            <a routerLink="/in-box-desiccants/incubic/silica-gel-round-beads" (click)="onNavClick()" class="block py-1 text-sm text-gray-600">
+            <a routerLink="/in-box-desiccants/incubic/silica-gel-round-beads" (click)="onNavClick()"
+              class="block py-1 text-sm text-gray-600">
               Silica Gel Round Beads
             </a>
 
-            <a routerLink="/in-box-desiccants/incubic/silica-gel-granules" (click)="onNavClick()" class="block py-1 text-sm text-gray-600">
+            <a routerLink="/in-box-desiccants/incubic/silica-gel-granules" (click)="onNavClick()"
+              class="block py-1 text-sm text-gray-600">
               Silica Gel Granules
             </a>
 
-            <a routerLink="/in-box-desiccants/incubic/molecular-sieve-desiccants"
-              (click)="onNavClick()" class="block py-1 text-sm text-gray-600">
+            <a routerLink="/in-box-desiccants/incubic/molecular-sieve-desiccants" (click)="onNavClick()"
+              class="block py-1 text-sm text-gray-600">
               Molecular Sieve Desiccants
             </a>
 
-            <a routerLink="/in-box-desiccants/incubic/indicating-specialty-desiccants"
-              (click)="onNavClick()" class="block py-1 text-sm text-gray-600">
+            <a routerLink="/in-box-desiccants/incubic/indicating-specialty-desiccants" (click)="onNavClick()"
+              class="block py-1 text-sm text-gray-600">
               Indicating Specialty Desiccants
             </a>
 
-            <a routerLink="/in-box-desiccants/incubic/food-grade-desiccants" (click)="onNavClick()" class="block py-1 text-sm text-gray-600">
+            <a routerLink="/in-box-desiccants/incubic/food-grade-desiccants" (click)="onNavClick()"
+              class="block py-1 text-sm text-gray-600">
               Food Grade Desiccants
             </a>
 
-            <a routerLink="/in-box-desiccants/incubic/activated-carbon" (click)="onNavClick()" class="block py-1 text-sm text-gray-600">
+            <a routerLink="/in-box-desiccants/incubic/activated-carbon" (click)="onNavClick()"
+              class="block py-1 text-sm text-gray-600">
               Activated Carbon
             </a>
 
-            <a routerLink="/in-box-desiccants/incubic/oxygen-absorbers" (click)="onNavClick()" class="block py-1 text-sm text-gray-600">
+            <a routerLink="/in-box-desiccants/incubic/oxygen-absorbers" (click)="onNavClick()"
+              class="block py-1 text-sm text-gray-600">
               Oxygen Absorbers
             </a>
           </div>
         </div>
-
       </li>
-
+      <li><a class="hover:text-[#05266e]">Knowledge Center</a></li>
+      <li><a class="hover:text-[#05266e]">CSR</a></li>
       <li><a routerLink="/contact" (click)="onNavClick()">Contact Us</a></li>
     </ul>
   </div>

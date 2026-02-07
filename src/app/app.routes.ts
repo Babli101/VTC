@@ -64,9 +64,15 @@ export const routes: Routes = [
   },
 
   /* ---------------- Container Desiccants ---------------- */
-{
+  {
     path: 'container-desiccants',
     loadComponent: () =>
       import('./container-desiccants/container-desiccants').then(m => m.ContainerDesiccants),
+  },
+  {
+    path: 'container-desiccants/:category/:product',
+    loadComponent: () =>
+      import('./product/product-details/product-details')
+        .then(m => m.ProductDetails),
   },
 ];
